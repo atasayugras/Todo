@@ -12,7 +12,12 @@ app.use(express.static("public"));
 
 //############################################## Mongoose ##############################################
 
-mongoose.connect("mongodb+srv://admin-atasay:test123@cluster0.t1mjqn7.mongodb.net/todolistDB");
+try {
+  mongoose.connect("mongodb+srv://admin-atasay:test123@cluster0.t1mjqn7.mongodb.net/todolistDB");
+} catch (err) {
+  console.log(err);
+}
+
 
 const { Schema } = mongoose;
 
